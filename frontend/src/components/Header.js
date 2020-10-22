@@ -10,7 +10,7 @@ export const Header = () => {
             NIPO
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler mr-auto"
             type="button"
             data-toggle="collapse"
             data-target="#navbarColor01"
@@ -25,7 +25,7 @@ export const Header = () => {
             <input
               className="form-control mr-sm-2"
               type="text"
-              placeholder="Search"
+              placeholder="Find the best device..."
             />
             <button className="btn btn-secondary my-2 my-sm-0" type="submit">
               Search
