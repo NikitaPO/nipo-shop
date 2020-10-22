@@ -7,6 +7,22 @@ a:hover {
   color: #ffffff;
 }
 
+.nav-link {
+  transition: 0.3s;
+}
+
+.nav-link .fas {
+  padding: 7px;
+}
+
+.navbar-brand {
+  cursor: pointer;
+}
+
+.navbar-brand::selection {
+  background-color: transparent;
+}
+
 .card:hover {
   position: relative;
   box-shadow: 0px 0px 10px rgba(206, 207, 207, 0.589);
