@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import Rating from "./Rating";
 
-export const Product = ({ product }) => {
+const Product = ({ product }) => {
   return (
     <Card className="card text-white bg-primary mb-3 rounded">
       <a href={`/product/${product.id}`}>
@@ -20,3 +20,5 @@ export const Product = ({ product }) => {
     </Card>
   );
 };
+
+export default Product;
