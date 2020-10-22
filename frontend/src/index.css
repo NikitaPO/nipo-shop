@@ -1,3 +1,15 @@
 main {
   min-height: 80vh;
 }
+
+a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.card:hover {
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(206, 207, 207, 0.589);
+  transform: scale(1.01);
+  transition: 0.3s;
+}
