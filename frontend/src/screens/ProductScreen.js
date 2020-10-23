@@ -12,7 +12,7 @@ const ProductScreen = ({ match }) => {
       .get(`/api/products/${match.params.id}`)
       .then((res) => setProduct(res.data))
       .catch(() => console.log("Can't find product"));
-  }, [match.params.id]);
+  }, [match]);
 
   let isInStock = product.countInStock > 0;
 
