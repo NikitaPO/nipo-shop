@@ -1,11 +1,19 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Image, ListGroup, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
-import products from "../products";
 
 const ProductScreen = ({ match }) => {
-  let product = products.find((prod) => prod._id === match.params.id);
+  let [product, setProduct] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(`/api/products/${match.params.id}`)
+      .then((res) => setProduct(res.data))
+      .catch(() => console.log("Can't find product"));
+  }, [match.params.id]);
+
   let isInStock = product.countInStock > 0;
 
   return (
@@ -13,6 +21,9 @@ const ProductScreen = ({ match }) => {
       <Row className="my-3">
         <Col md={6}>
           <Image src={product.image} alt={product.name} fluid />
+          <Link type="button" className="btn btn-primary mt-3" to="/">
+            Go back
+          </Link>
         </Col>
         <Col md={6}>
           <ListGroup variant="flush">
@@ -43,9 +54,6 @@ const ProductScreen = ({ match }) => {
           </Button>
         </Col>
       </Row>
-      <Link type="button" className="btn btn-primary" to="/">
-        Go back
-      </Link>
     </>
   );
 };
