@@ -7,16 +7,21 @@ a:hover {
   color: #ffffff;
 }
 
-.nav-link {
-  transition: 0.3s;
+.nav-link:hover {
+  cursor: pointer;
 }
-
 .nav-link .fas {
   padding: 7px;
 }
 
 .navbar-brand {
   cursor: pointer;
+}
+
+.list-group-item,
+.btn,
+.nav-link {
+  transition: 0.3s;
 }
 
 .navbar-brand::selection {
