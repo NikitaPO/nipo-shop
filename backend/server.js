@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import colors from "colors";
 import products from "./data/products.js";
-import connectDB from "./config/db.js";
+import connectDB from "./config/connectDB.js";
 
 dotenv.config();
 
