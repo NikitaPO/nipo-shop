@@ -4,6 +4,7 @@ import colors from "colors";
 import products from "./data/products.js";
 import connectDB from "./config/connectDB.js";
 import productRoute from "./routes/productRoute.js";
+import { errorHandler, notFoundError } from "./middleware/errorHandler.js";
 
 dotenv.config();
 
@@ -16,6 +17,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoute);
+
+app.use(notFoundError);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
