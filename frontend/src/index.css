@@ -2,6 +2,11 @@ main {
   min-height: 80vh;
 }
 
+.logo {
+  max-width: 150px;
+  margin-right: 20px;
+}
+
 a:hover {
   text-decoration: none;
   color: #ffffff;

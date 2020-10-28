@@ -8,7 +8,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <Container>
           <LinkContainer to="/">
-            <div className="navbar-brand">NIPO</div>
+            <img className="logo" src="/logo.png" alt="logo" />
           </LinkContainer>
           <button
             className="navbar-toggler mr-auto"
