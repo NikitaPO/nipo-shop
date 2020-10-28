@@ -6,18 +6,19 @@ import Rating from "../components/Rating";
 import { listProductsDetails } from "../actions/productsActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import MinMaxInput from "../components/MinMaxInput";
 
 const ProductScreen = ({ match }) => {
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, product, error } = productDetails;
+  let isInStock;
+  if (product) isInStock = product.countInStock > 0;
 
   useEffect(() => {
     dispatch(listProductsDetails(match.params.id));
   }, [match, dispatch]);
-
-  let isInStock = product.countInStock > 0;
 
   return (
     <>
@@ -55,8 +56,13 @@ const ProductScreen = ({ match }) => {
               <ListGroup.Item>
                 Price: <b>${product.price}</b>
               </ListGroup.Item>
+              <ListGroup.Item>{product.description}</ListGroup.Item>
               <ListGroup.Item>
-                Description: {product.description}
+                <MinMaxInput
+                  min={1}
+                  max={product.countInStock}
+                  placeholder={1}
+                />
               </ListGroup.Item>
             </ListGroup>
             <Button className={"btn-block btn-success"} disabled={!isInStock}>

@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
 import express from "express";
 import colors from "colors";
-import products from "./data/products.js";
 import connectDB from "./config/connectDB.js";
 import productRoute from "./routes/productRoute.js";
+import cartRoute from "./routes/cartRoute.js";
 import { errorHandler, notFoundError } from "./middleware/errorHandler.js";
 
 dotenv.config();
@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoute);
+app.use("/api/cart", cartRoute);
 
 app.use(notFoundError);
 app.use(errorHandler);
