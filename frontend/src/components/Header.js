@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-const Header = () => {
+const Header = ({ location }) => {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -34,7 +34,7 @@ const Header = () => {
           </form>
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
+              <li className="nav-item">
                 <LinkContainer to="/about">
                   <div className="nav-link">
                     <i className="fas fa-info-circle"></i>About
