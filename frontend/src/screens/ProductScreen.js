@@ -32,13 +32,13 @@ const ProductScreen = ({ match, history }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <Row className="my-3">
-          <Col md={6}>
-            <Image src={product.image} alt={product.name} fluid />
-            <Link type="button" className="btn btn-primary mt-3" to="/">
+          <Col md={6} lg={6}>
+            <Link type="button" className="btn btn-primary mb-3" to="/">
               Go back
             </Link>
+            <Image src={product.image} alt={product.name} fluid />
           </Col>
-          <Col md={3}>
+          <Col md={6} lg={3}>
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <h3>{product.name}</h3>
@@ -60,7 +60,7 @@ const ProductScreen = ({ match, history }) => {
               <ListGroup.Item>{product.description}</ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col md={3}>
+          <Col md={6} lg={3}>
             <ListGroup.Item>
               Price: <b>${product.price}</b>
             </ListGroup.Item>
