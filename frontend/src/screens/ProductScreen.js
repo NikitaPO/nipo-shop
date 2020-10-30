@@ -15,6 +15,10 @@ const ProductScreen = ({ match, history }) => {
   const { loading, product, error } = productDetails;
   let isInStock;
   if (product) isInStock = product.countInStock > 0;
+  let items = 5;
+  if (product.countInStock < 5) {
+    items = product.countInStock;
+  }
 
   const addToCardHandler = () => {
     history.push(`/cart/${match.params.id}?quantity=${quantity}`);
@@ -75,7 +79,7 @@ const ProductScreen = ({ match, history }) => {
                       value={quantity}
                       onChange={(e) => setQuantity(e.target.value)}
                     >
-                      {[...Array(product.countInStock).keys()].map((e) => (
+                      {[...Array(items).keys()].map((e) => (
                         <option key={e + 1} value={e + 1}>
                           {e + 1}
                         </option>

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import Message from "../components/Message";
 
-const CartScreen = ({ match, location }) => {
+const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
   const dispatch = useDispatch();
   const quantity = location.search ? +location.search.split("=")[1] : 1;
@@ -14,11 +14,11 @@ const CartScreen = ({ match, location }) => {
   const { cartItems } = cart;
 
   const checkoutHandler = () => {
-    console.log("checkout");
+    history.push(`/login?redirect=shipping`);
   };
 
   const removeHandler = (id) => {
-    console.log("remove " + id);
+    dispatch(removeFromCart(id));
   };
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const CartScreen = ({ match, location }) => {
   return (
     <Row>
       <Col sm={12} lg={8}>
-        <h1>Cart shopping list</h1>
+        <h1>Shopping cart</h1>
         {cartItems.length > 0 ? (
           <ListGroup>
             {cartItems.map((item) => (
@@ -99,7 +99,7 @@ const CartScreen = ({ match, location }) => {
             <Button
               type="button"
               className="btn-block"
-              disabled={cartItems == 0}
+              disabled={cartItems === 0}
               onClick={checkoutHandler}
             >
               Go to checkout
