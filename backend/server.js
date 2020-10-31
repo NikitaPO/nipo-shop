@@ -2,7 +2,8 @@ import dotenv from "dotenv";
 import express from "express";
 import colors from "colors";
 import connectDB from "./config/connectDB.js";
-import productRoute from "./routes/productRoute.js";
+import productRoutes from "./routes/productRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import { errorHandler, notFoundError } from "./middleware/errorHandler.js";
 
 dotenv.config();
@@ -11,11 +12,14 @@ connectDB();
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.end("Server is running");
 });
 
-app.use("/api/products", productRoute);
+app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(notFoundError);
 app.use(errorHandler);
