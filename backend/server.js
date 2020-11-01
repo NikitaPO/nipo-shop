@@ -4,7 +4,7 @@ import colors from "colors";
 import connectDB from "./config/connectDB.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import { errorHandler, notFoundError } from "./middleware/errorHandler.js";
+import { errorHandler, notFoundError } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
