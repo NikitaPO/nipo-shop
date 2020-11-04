@@ -17,55 +17,57 @@ const Header = () => {
   return (
     <header>
       <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Container>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-        <LinkContainer to="/" className="mr-auto">
-          <Navbar.Brand>NIPO</Navbar.Brand>
-          {/* <img className="logo" src="/logo.png" alt="logo" /> */}
-        </LinkContainer>
+          <LinkContainer to="/" className="mr-auto">
+            <Navbar.Brand>NIPO</Navbar.Brand>
+            {/* <img className="logo" src="/logo.png" alt="logo" /> */}
+          </LinkContainer>
 
-        <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="text"
-            placeholder="Find the best device..."
-          />
-        </form>
+          <form className="form-inline my-2 my-lg-0">
+            <input
+              className="form-control mr-sm-2"
+              type="text"
+              placeholder="Find the best device..."
+            />
+          </form>
 
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto">
-            <LinkContainer to="/about">
-              <div className="nav-link">
-                <i className="fas fa-info-circle"></i>About
-              </div>
-            </LinkContainer>
-
-            <LinkContainer to="/cart">
-              <div className="nav-link">
-                <i className="fas fa-shopping-cart mr-1"></i>Cart
-              </div>
-            </LinkContainer>
-
-            {userInfo ? (
-              <NavDropdown title={userInfo.name} id="username">
-                <LinkContainer to="/profile">
-                  <NavDropdown.Item>Profile</NavDropdown.Item>
-                </LinkContainer>
-
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={logoutHandler}>
-                  Logout
-                </NavDropdown.Item>
-              </NavDropdown>
-            ) : (
-              <LinkContainer to="/login">
-                <Nav.Link>
-                  <i className="fas fa-user mr-1"></i>Sing In
-                </Nav.Link>
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ml-auto">
+              <LinkContainer to="/about">
+                <div className="nav-link">
+                  <i className="fas fa-info-circle"></i>About
+                </div>
               </LinkContainer>
-            )}
-          </Nav>
-        </Navbar.Collapse>
+
+              <LinkContainer to="/cart">
+                <div className="nav-link">
+                  <i className="fas fa-shopping-cart mr-1"></i>Cart
+                </div>
+              </LinkContainer>
+
+              {userInfo ? (
+                <NavDropdown title={userInfo.name} id="username">
+                  <LinkContainer to="/profile">
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  </LinkContainer>
+
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer to="/login">
+                  <Nav.Link>
+                    <i className="fas fa-user mr-1"></i>Sing In
+                  </Nav.Link>
+                </LinkContainer>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
     </header>
   );
