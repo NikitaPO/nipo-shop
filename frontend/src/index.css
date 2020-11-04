@@ -24,7 +24,7 @@ a:hover {
   cursor: pointer;
 }
 .nav-link .fas {
-  padding: 7px;
+  padding-right: 7px;
 }
 
 .navbar-brand {

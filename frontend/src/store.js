@@ -12,7 +12,7 @@ const reducer = combineReducers({
   productList: productListReduser,
   productDetails: productDetailsReduser,
   cart: cartReducer,
-  userInfo: userLoginReducer,
+  userLogin: userLoginReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")
