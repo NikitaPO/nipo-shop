@@ -13,7 +13,9 @@ const Product = ({ product }) => {
           <p className="card-text">{product.description}</p>
           <Rating
             value={product.rating}
-            text={`${product.numReviews} reviews`}
+            text={`${product.numReviews} ${
+              product.numReviews % 10 === 1 ? " оценка" : " оценок"
+            }`}
           />
           <h4 className="card-title mt-2">${product.price}</h4>
         </div>

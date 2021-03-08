@@ -37,10 +37,10 @@ const ProductScreen = ({ match, history }) => {
       ) : (
         <Row className="my-3">
           <Col md={6} lg={6}>
-            <Link type="button" className="btn btn-primary mb-3" to="/">
+            <Image src={product.image} alt={product.name} fluid />
+            <Link type="button" className="btn btn-primary mt-3" to="/">
               Назад
             </Link>
-            <Image src={product.image} alt={product.name} fluid />
           </Col>
           <Col md={6} lg={3}>
             <ListGroup variant="flush">
@@ -50,7 +50,9 @@ const ProductScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Rating
                   value={product.rating}
-                  text={`${product.numReviews} раз оценено`}
+                  text={`${product.numReviews} ${
+                    product.numReviews % 10 === 1 ? " оценка" : " оценок"
+                  }`}
                 />
               </ListGroup.Item>
               <ListGroup.Item>
