@@ -30,7 +30,7 @@ const CartScreen = ({ match, location, history }) => {
   return (
     <Row>
       <Col sm={12} lg={8}>
-        <h1>Корзина покупокt</h1>
+        <h1>Корзина покупок</h1>
         {cartItems.length > 0 ? (
           <ListGroup>
             {cartItems.map((item) => (
@@ -81,10 +81,10 @@ const CartScreen = ({ match, location, history }) => {
       <Col sm={12} lg={4}>
         <ListGroup>
           <ListGroup.Item>
-            <h2>{`Subtotal (${cartItems.reduce(
+            <h2>{`Количество товаров в корзине (${cartItems.reduce(
               (acc, item) => acc + +item.quantity,
               0
-            )}) items`}</h2>
+            )})`}</h2>
           </ListGroup.Item>
           <ListGroup.Item>
             Итоговая сумма:

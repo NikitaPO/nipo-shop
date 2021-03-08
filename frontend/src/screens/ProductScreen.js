@@ -50,11 +50,11 @@ const ProductScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Rating
                   value={product.rating}
-                  text={`${product.numReviews} reviews`}
+                  text={`${product.numReviews} раз оценено`}
                 />
               </ListGroup.Item>
               <ListGroup.Item>
-                Status:{" "}
+                Статус:{" "}
                 {isInStock ? (
                   <span className="text-success">Есть на складе</span>
                 ) : (
