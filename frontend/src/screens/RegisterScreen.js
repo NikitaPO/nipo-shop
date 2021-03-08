@@ -30,7 +30,7 @@ const RegisterScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setMessage("Passwords do not match");
+      setMessage("Пароли не совпадают");
     } else {
       setMessage(null);
       dispatch(register(name, email, password));
@@ -39,7 +39,7 @@ const RegisterScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sing Up</h1>
+      <h1>Зарегистрироваться</h1>
 
       {message ? (
         <Message variant="danger">{message}</Message>
@@ -53,12 +53,12 @@ const RegisterScreen = ({ location, history }) => {
         <>
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
-              <Form.Label>Name:</Form.Label>
+              <Form.Label>Имя:</Form.Label>
               <Form.Control
                 type="text"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
-                placeholder="Enter name"
+                placeholder="Введите имя"
               />
             </Form.Group>
 
@@ -68,39 +68,39 @@ const RegisterScreen = ({ location, history }) => {
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                placeholder="Enter email"
+                placeholder="Введите email"
               />
             </Form.Group>
 
             <Form.Group controlId="password">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>Пароль:</Form.Label>
               <Form.Control
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                placeholder="Enter password"
+                placeholder="Введите пароль"
               />
             </Form.Group>
 
             <Form.Group controlId="confirmPassword">
-              <Form.Label>Confirm password:</Form.Label>
+              <Form.Label>Подтвердите пароль:</Form.Label>
               <Form.Control
                 type="password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 value={confirmPassword}
-                placeholder="Confirm password"
+                placeholder="Подтверждение пароля"
               />
             </Form.Group>
 
             <Button type="submit" variant="primary" className="my-2">
-              Register
+              Зарегистрироваться
             </Button>
 
             <Row>
               <Col>
-                Have an account?&nbsp;&nbsp;
+                Уже есть аккаунт?&nbsp;&nbsp;
                 <Link to={redirect ? `login?redirect=${redirect}` : "/login"}>
-                  Login
+                  Войти
                 </Link>
               </Col>
             </Row>

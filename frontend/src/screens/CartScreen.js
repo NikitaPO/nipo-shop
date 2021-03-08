@@ -30,7 +30,7 @@ const CartScreen = ({ match, location, history }) => {
   return (
     <Row>
       <Col sm={12} lg={8}>
-        <h1>Shopping cart</h1>
+        <h1>Корзина покупокt</h1>
         {cartItems.length > 0 ? (
           <ListGroup>
             {cartItems.map((item) => (
@@ -74,7 +74,7 @@ const CartScreen = ({ match, location, history }) => {
           </ListGroup>
         ) : (
           <Message>
-            Your cart is empty, <Link to="/">go back</Link>
+            Ваша корзина пуста, <Link to="/">вернуться назад</Link>
           </Message>
         )}
       </Col>
@@ -87,7 +87,7 @@ const CartScreen = ({ match, location, history }) => {
             )}) items`}</h2>
           </ListGroup.Item>
           <ListGroup.Item>
-            Total price:
+            Итоговая сумма:
             <b>
               {" $"}
               {cartItems
@@ -102,7 +102,7 @@ const CartScreen = ({ match, location, history }) => {
               disabled={cartItems === 0}
               onClick={checkoutHandler}
             >
-              Go to checkout
+              Перейти к оформлению
             </Button>
           </ListGroup.Item>
         </ListGroup>

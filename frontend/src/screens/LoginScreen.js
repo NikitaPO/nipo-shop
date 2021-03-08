@@ -31,7 +31,7 @@ const LoginScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
+      <h1>Вход</h1>
       {error && <Message variant="danger">{error}</Message>}
       {loading ? (
         <Loader />
@@ -49,7 +49,7 @@ const LoginScreen = ({ location, history }) => {
             </Form.Group>
 
             <Form.Group controlId="password">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>Пароль:</Form.Label>
               <Form.Control
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
@@ -59,16 +59,16 @@ const LoginScreen = ({ location, history }) => {
             </Form.Group>
 
             <Button type="submit" variant="primary" className="my-2">
-              Sign in
+              Вход
             </Button>
           </Form>
           <Row>
             <Col>
-              New customer?&nbsp;&nbsp;
+              Не зарегистрированы?&nbsp;&nbsp;
               <Link
                 to={redirect ? `register?redirect=${redirect}` : "/register"}
               >
-                Register
+                Зарегистрироваться
               </Link>
             </Col>
           </Row>

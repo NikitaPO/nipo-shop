@@ -38,7 +38,7 @@ const ProductScreen = ({ match, history }) => {
         <Row className="my-3">
           <Col md={6} lg={6}>
             <Link type="button" className="btn btn-primary mb-3" to="/">
-              Go back
+              Назад
             </Link>
             <Image src={product.image} alt={product.name} fluid />
           </Col>
@@ -56,9 +56,9 @@ const ProductScreen = ({ match, history }) => {
               <ListGroup.Item>
                 Status:{" "}
                 {isInStock ? (
-                  <span className="text-success">In stock</span>
+                  <span className="text-success">Есть на складе</span>
                 ) : (
-                  <span className="text-danger">Out of stock</span>
+                  <span className="text-danger">Нет на складе</span>
                 )}
               </ListGroup.Item>
               <ListGroup.Item>{product.description}</ListGroup.Item>
@@ -66,13 +66,13 @@ const ProductScreen = ({ match, history }) => {
           </Col>
           <Col md={6} lg={3}>
             <ListGroup.Item>
-              Price: <b>${product.price}</b>
+              Цена: <b>${product.price}</b>
             </ListGroup.Item>
 
             {isInStock && (
               <ListGroup.Item>
                 <Row>
-                  <Col>Quantity: </Col>
+                  <Col>Количество: </Col>
                   <Col>
                     <Form.Control
                       as="select"
@@ -94,7 +94,7 @@ const ProductScreen = ({ match, history }) => {
               className={"btn-block btn-success"}
               disabled={!isInStock}
             >
-              Add to card
+              Добавить в корзину
             </Button>
           </Col>
         </Row>

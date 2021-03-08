@@ -29,31 +29,31 @@ const Header = () => {
             <Nav className="ml-auto">
               <LinkContainer to="/about">
                 <div className="nav-link">
-                  <i className="fas fa-info-circle"></i>About
+                  <i className="fas fa-info-circle"></i>О нас
                 </div>
               </LinkContainer>
 
               <LinkContainer to="/cart">
                 <div className="nav-link">
-                  <i className="fas fa-shopping-cart mr-1"></i>Cart
+                  <i className="fas fa-shopping-cart mr-1"></i>Корзина
                 </div>
               </LinkContainer>
 
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                    <NavDropdown.Item>Профиль</NavDropdown.Item>
                   </LinkContainer>
 
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logoutHandler}>
-                    Logout
+                    Выход
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login">
                   <div className="nav-link">
-                    <i className="fas fa-user mr-1"></i>Sing In
+                    <i className="fas fa-user mr-1"></i>Вход
                   </div>
                 </LinkContainer>
               )}
