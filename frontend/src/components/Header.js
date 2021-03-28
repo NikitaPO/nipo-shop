@@ -9,7 +9,6 @@ const Header = () => {
 
   const userLogin = useSelector((state) => state.userLogin);
   let userInfo = userLogin.userInfo;
-  console.log(userInfo);
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -27,12 +26,6 @@ const Header = () => {
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <LinkContainer to="/about">
-                <div className="nav-link">
-                  <i className="fas fa-info-circle"></i>О нас
-                </div>
-              </LinkContainer>
-
               <LinkContainer to="/cart">
                 <div className="nav-link">
                   <i className="fas fa-shopping-cart mr-1"></i>Корзина
