@@ -1,11 +1,12 @@
 import React from "react";
 import { ListGroup, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ProfileScreen = () => {
   const userInfo = useSelector((state) => state.userLogin).userInfo;
 
-  return (
+  return userInfo ? (
     <>
       <Row>
         <h1>Профиль пользователя</h1>
@@ -29,6 +30,12 @@ const ProfileScreen = () => {
         </ListGroup.Item>
       </ListGroup>
     </>
+  ) : (
+    <Row>
+      <h3>
+        Вы не авторизованы, <Link to={"/login"}> авторизоваться</Link>
+      </h3>
+    </Row>
   );
 };
 
