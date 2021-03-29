@@ -17,7 +17,6 @@ const LoginScreen = ({ location, history }) => {
   const cartItems = useSelector((state) => state.cart).cartItems;
   const { loading, error, userInfo } = userLogin;
 
-  console.log(cartItems);
   let redirect =
     location.search && cartItems.length !== 0
       ? location.search.split("=")[1]
