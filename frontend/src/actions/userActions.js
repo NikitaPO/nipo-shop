@@ -13,18 +13,6 @@ export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
 
-    // const data = await fetch("/api/users/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ email, password }),
-    // })
-    //   .then((x) => x.json())
-    //   .catch((err) => {
-    //     throw new Error(err);
-    //   });
-
     const config = {
       headers: {
         "Content-Type": "application/json",

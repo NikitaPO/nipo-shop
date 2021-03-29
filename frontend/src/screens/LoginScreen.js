@@ -14,9 +14,14 @@ const LoginScreen = ({ location, history }) => {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
+  const cartItems = useSelector((state) => state.cart).cartItems;
   const { loading, error, userInfo } = userLogin;
 
-  const redirect = location.search ? location.search.split("=")[1] : "/";
+  console.log(cartItems);
+  let redirect =
+    location.search && cartItems.length !== 0
+      ? location.search.split("=")[1]
+      : "/";
 
   useEffect(() => {
     if (userInfo) {
