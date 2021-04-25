@@ -3,6 +3,7 @@ import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, removeFromCart } from "../actions/cartActions";
+import { createOrder } from "../actions/orderActions";
 import Message from "../components/Message";
 
 const CartScreen = ({ match, location, history }) => {
@@ -13,8 +14,9 @@ const CartScreen = ({ match, location, history }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  const checkoutHandler = () => {
-    history.push(`/login?redirect=shipping`);
+  const checkoutHandler = (cartItems) => {
+    dispatch(createOrder(cartItems));
+    history.push(`/login?redirect=success`);
   };
 
   const removeHandler = (id) => {
@@ -100,9 +102,9 @@ const CartScreen = ({ match, location, history }) => {
               type="button"
               className="btn-block"
               disabled={cartItems === 0}
-              onClick={checkoutHandler}
+              onClick={() => checkoutHandler(cartItems)}
             >
-              Перейти к оформлению
+              Оформить заказ
             </Button>
           </ListGroup.Item>
         </ListGroup>
