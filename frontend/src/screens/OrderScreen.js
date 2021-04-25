@@ -15,8 +15,6 @@ const OrderScreen = () => {
     dispatch(listOrders());
   }, [dispatch]);
 
-  console.log("orders", orders);
-
   return (
     <>
       <Row>
