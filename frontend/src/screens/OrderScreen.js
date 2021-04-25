@@ -33,7 +33,7 @@ const OrderScreen = () => {
           <ListGroup>
             <ListGroup.Item key="0">
               <Row>
-                <Col>Изображение</Col>
+                <Col>Статус</Col>
                 <Col>Цена</Col>
                 <Col>Количество товаров</Col>
                 <Col>Номер заказа</Col>
@@ -44,11 +44,7 @@ const OrderScreen = () => {
                 <ListGroup.Item key={order._id}>
                   <Row>
                     <Col>
-                      <Image
-                        src={order.orderItems[0].image}
-                        fluid
-                        width="300px"
-                      />
+                      <Image src="/images/order.jpg" width="50px" fluid />
                     </Col>
                     <Col>{order.totalPrice + "$"}</Col>
                     <Col>
