@@ -6,17 +6,13 @@ import asyncHandler from "express-async-handler";
 //@access Private
 
 const createOrder = asyncHandler(async (req, res) => {
-  let { user, orderItems, totalPrice } = req.body;
-
-  console.log("createOrder");
+  const { user, orderItems, totalPrice } = req.body;
 
   const order = await Order.create({
     user,
     orderItems,
     totalPrice,
   });
-
-  console.log("order -> ", order);
 
   if (order) {
     res.status(201).json({
