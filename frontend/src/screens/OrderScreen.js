@@ -44,7 +44,7 @@ const OrderScreen = () => {
                     <Col>
                       <Image src="/images/order.jpg" width="50px" fluid />
                     </Col>
-                    <Col>{order.totalPrice + "$"}</Col>
+                    <Col>{Number(order.totalPrice).toFixed(2) + "$"}</Col>
                     <Col>
                       {order.orderItems.reduce(
                         (sum, item) => (sum += item.quantity),
